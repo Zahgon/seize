@@ -1,4 +1,4 @@
-/// Pads and aligns a value to the length of a cache line.
+
 #[cfg_attr(
     any(
         target_arch = "x86_64",
@@ -38,13 +38,9 @@ pub struct CachePadded<T> {
 impl<T> std::ops::Deref for CachePadded<T> {
     type Target = T;
 
-    fn deref(&self) -> &T {
-        &self.value
-    }
+    fn deref(&self) -> &T { panic!("STUB: not implemented") }
 }
 
 impl<T> std::ops::DerefMut for CachePadded<T> {
-    fn deref_mut(&mut self) -> &mut T {
-        &mut self.value
-    }
+    fn deref_mut(&mut self) -> &mut T { panic!("STUB: not implemented") }
 }
